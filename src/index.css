@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Netflix-inspired streaming theme */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Netflix red as primary */
+    --primary: 0 82% 63%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 82% 63%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 18%;
+    --ring: 0 82% 63%;
+
+    --radius: 0.5rem;
+
+    /* Custom streaming theme tokens */
+    --netflix-red: 0 82% 63%;
+    --netflix-dark: 0 0% 8%;
+    --netflix-card: 0 0% 12%;
+    --netflix-hover: 0 0% 15%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 4%) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(0 0% 8% / 0.8) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 12%) 0%, hsl(0 0% 8%) 100%);
+    
+    /* Shadows */
+    --shadow-movie: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+    --shadow-hero: 0 20px 40px -10px hsl(0 0% 0% / 0.6);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode maintains the same streaming theme */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --netflix-dark: 0 0% 4%;
+    --netflix-card: 0 0% 8%;
+    --netflix-hover: 0 0% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  /* Hide scrollbars */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Text truncation utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
